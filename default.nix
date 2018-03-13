@@ -9,6 +9,7 @@ in haskellPackages.mkDerivation {
 
   executableHaskellDepends = with haskellPackages; [
     blaze-html clay
+    persistent persistent-template aeson time
   ];
   
   libraryHaskellDepends = with pkgs.haskellPackages; [
