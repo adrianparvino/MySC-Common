@@ -23,7 +23,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
-module DB where
+module MySC.Common.DB where
 
 import DB.Types
 import Control.Monad.Logger

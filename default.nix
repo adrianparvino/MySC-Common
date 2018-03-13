@@ -1,10 +1,9 @@
-{ pkgs ? import <nixpkgs> {config = (import ./../config.nix) pkgs compiler;}
+{ pkgs ? import <nixpkgs> {}
 , haskellPackages
-, compiler ? "ghc802"
 }:
 let
 in haskellPackages.mkDerivation {
-  pname = "MySC-Common";
+  pname = "mysc-common";
   version = "0.1.0.0";
   src = ./.;
 
@@ -13,10 +12,9 @@ in haskellPackages.mkDerivation {
   ];
   
   libraryHaskellDepends = with pkgs.haskellPackages; [
-    persistent aeson time persistent-postgresql
+    persistent persistent-template aeson time
   ];
 
   license = pkgs.stdenv.lib.licenses.gpl3;
-
-  isExecutable = true;
+  doHaddock = false;
 }

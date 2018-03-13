@@ -26,7 +26,6 @@
 module MySC.Common.DB.Types where
 
 import Database.Persist
-import Database.Persist.Postgresql
 import Database.Persist.TH
 import Data.ByteString
 import Data.Time

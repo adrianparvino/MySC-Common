@@ -15,12 +15,17 @@
 
 {-# LANGUAGE OverloadedStrings #-}
 
-module HTML.Comments where
+module Main where
+
+import CSS
+import HTML
+
+import Clay hiding (html)
 
 import qualified Text.Blaze.Html5 as H
 import qualified Text.Blaze.Html5.Attributes as A
-
-main = putStrLn $ renderHtml $ H.docTypeHtml $ do
+import qualified Text.Blaze.Html.Renderer.String as H
+main = putStrLn $ H.renderHtml $ H.docTypeHtml $ do
   H.head $ do
-    H.style H.! A.Type_ "text/css" $ H.toHtml $ renderWith compact [] css
+    H.style H.! A.type_ "text/css" $ H.toHtml $ renderWith compact [] defaultStyle
   H.body html
