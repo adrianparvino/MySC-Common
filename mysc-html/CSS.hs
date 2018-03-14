@@ -22,25 +22,17 @@ import Clay
 
 defaultStyle :: Css
 defaultStyle = do
-  importUrl "https://fonts.googleapis.com/css?family=Inconsolata"
-  ".comment" ? do
-    overflow hidden
-    fontFamily ["Inconsolata"] [monospace]
-    header ? do
-      sym padding (px 2)
-      star <? display inlineBlock
-      ".steamId" <? marginLeft (px 10)
-      ".date" <? float floatRight
-      backgroundColor gray
-    p ? do sym margin (px 0)
-           sym padding (px 2)
-    background lightgray
-    sym borderRadius (px 4)
-  ".comment" |+ ".comment" ? do
-    marginTop (px 10)
-
--- withStyle :: Css -> H.Html -> H.Html
--- withStyle css html = H.docTypeHtml $ do
---   H.head $ do
---     H.style H.! A.type_ "text/css" $ H.toHtml $ renderWith compact [] css
---   H.body html
+  ".center-text" ? do
+    textAlign . alignSide $ sideCenter
+  ".full-height" ? do
+    height $ vh 100
+  ".card" ? do
+    display $ flex
+    flexDirection $ column
+  ".card" |> ".card-header" ? do
+    flexGrow $ 0
+  ".card" |> ".card-content" ? do
+    flexGrow $ 1
+  ".card" |> ".card-footer" ? do
+    flexGrow $ 0
+    
