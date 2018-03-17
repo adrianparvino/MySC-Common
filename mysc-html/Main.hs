@@ -29,6 +29,7 @@ main = putStrLn $ H.renderHtml $ H.docTypeHtml $ do
   H.head $ do
     H.style  H.! A.type_ "text/css" $ H.toHtml $ renderWith compact [] defaultStyle
     H.link   H.! A.href  "https://fonts.googleapis.com/css?family=Pacifico" H.! A.rel "stylesheet"
-    H.link   H.! A.href  "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css" H.! A.rel "stylesheet"
+    H.link   H.! A.href  "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" H.! A.rel "stylesheet"
     H.script H.! A.src   "https://use.fontawesome.com/bc68209d19.js" $ return ()
+    H.script H.! A.src   "./all.min.js" $ return ()
   H.body html

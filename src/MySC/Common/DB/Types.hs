@@ -26,6 +26,7 @@
 module MySC.Common.DB.Types where
 
 import Database.Persist
+import Data.Text
 import Database.Persist.TH
 import Data.ByteString
 import Data.Time
@@ -34,14 +35,14 @@ import Data.Aeson.TH
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 Comment
-    name String
-    content String
+    name Text
+    content Text
     steamId Int
     date UTCTime
-    replyName String Maybe
-    reply String Maybe
+    replyName Text Maybe
+    reply Text Maybe
 Mod
-    name String
+    name Text
     Name name
     password ByteString
 Session

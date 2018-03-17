@@ -22,5 +22,7 @@ import qualified Text.Blaze.Html5.Attributes as A
 
 html :: H.Html
 html = do
-  H.nav H.! A.class_ "navbar is-fixed-top" $ H.toHtml ("My System for Comments" :: String)
+  H.nav H.! A.class_ "navbar is-fixed-top" $
+    H.div H.! A.class_ "navbar-brand" $
+      H.toHtml ("My System for Comments" :: String)
   H.div H.! A.id "comments" $ return ()
